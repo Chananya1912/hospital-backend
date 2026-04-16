@@ -13,7 +13,11 @@ public class UserController {
 
     @Autowired
     private UserRepository repo;
-
+    
+    @GetMapping("/")
+    public String home() {
+        return "Backend is running 🚀";
+    }
     @PostMapping("/register")
     public User register(@RequestBody User user) {
         return repo.save(user);
